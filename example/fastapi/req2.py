@@ -1,5 +1,4 @@
 import requests
-import random
 
 headers = {
     "Content-type": "application/json",
@@ -7,7 +6,7 @@ headers = {
 }
 
 
-url = "http://localhost:8088/ncf/predict"
+url = "http://localhost:8000/ncf/predict"
 params={
     'user_id': 201,
     'movie_id' : 100,

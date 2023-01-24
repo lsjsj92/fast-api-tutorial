@@ -1,11 +1,12 @@
 from fastapi import FastAPI
-import add_router
+from routers.ncf import ncf
+from routers.nfm import nfm
 import uvicorn
 
 app = FastAPI()
 
-app.include_router(add_router.ncf)
-app.include_router(add_router.nfm)
+app.include_router(ncf)
+app.include_router(nfm)
 
 @app.get('/')
 def home():
