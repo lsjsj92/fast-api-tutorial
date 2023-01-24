@@ -4,11 +4,29 @@ from datetime import datetime
 from pydantic import BaseModel, BaseSettings
 from pydantic import Field
 from pydantic import validator
+'''
+class DBConfig(BaseSettings):
+    host: str = Field(default='127.0.0.1', env='db_host')
+    port: int = Field(default=3306, env='db_port')
+    
+    class Config:
+        env_file = '.env_ex'
+        
+    @validator("port")
+    def check_port(cls, port_input):
+        if port_input not in [3306, 8080]:
+            raise ValueError("port error")
+        return port_input
 
+print(DBConfig().dict())    
+'''
 
 class DBConfig(BaseSettings):
     host: str = Field(default='127.0.0.1', env='db_host')
     port: int = Field(default=3306, env='db_port')
+    
+    class Config:
+        env_file = '.env_ex'
     
     # 먼저 실행
     @validator("host", pre=True)
