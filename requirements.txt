@@ -1,0 +1,5 @@
+tqdm==4.64.1
+fastapi==0.88.0
+numpy==1.23.5
+pandas==1.5.2
+uvicorn==0.20.0
